@@ -23,14 +23,33 @@ function add_to_cart(id)
 	
 }
 
-function cart_get_number_of_items
+
+function cart_get_number_of_items()
 {
 	var cnt = 0;
 	for(var i=0, len=localStorage.length; i<len; i++) 
 	{
     	var key = localStorage.key(i);
     	var value = localStorage[key];
-
-    	cnt = cnt * 1 + value * 1;
+    	if(key.indexOf('product_') == 0)
+    	{
+    		cnt = cnt + value * 1;
+   		}
 	}
+	return cnt;
+}
+
+function cart_get_orders()
+{
+	var orders = '';
+	for(var i=0, len=localStorage.length; i<len; i++) 
+	{
+    	var key = localStorage.key(i);
+    	var value = localStorage[key];
+    	if(key.indexOf('product_') == 0)
+    	{
+    		orders = orders + key + '=' + value + ',';
+    	}
+	}
+	return orders;
 }
