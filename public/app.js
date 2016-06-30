@@ -8,25 +8,29 @@ function something()
 
 		window.localStorage.setItem('bbb', x);
 
-		alert(x);
+		alert('Item in your cart: ' + cart_get_number_of_items());
 }
 
 
 function add_to_cart(id)
 {
 	var key = 'product_' + id;
-	var count = 0;
+	 
 	var x = window.localStorage.getItem(key)
 	x = x * 1 + 1;
 	window.localStorage.setItem(key, x);
 
+	
+}
+
+function cart_get_number_of_items
+{
+	var cnt = 0;
 	for(var i=0, len=localStorage.length; i<len; i++) 
 	{
     	var key = localStorage.key(i);
     	var value = localStorage[key];
-    	count = count * 1 + value * 1;
-    	
+
+    	cnt = cnt * 1 + value * 1;
 	}
 }
-
-
