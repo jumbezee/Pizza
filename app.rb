@@ -30,12 +30,21 @@ post '/cart' do
 	@items.each do |item|
 		item[0] = Product.find(item[0])
 	end
-	@o =  {}
+	
 	erb :cart
 end
 
+
 post '/place_order' do
- 
+
+	@o = Order.new params[:orderr]
+   	if @o.save
+   		erb :place_order
+	else
+		@error = @o.errors.full_messages.first
+		erb :place_order
+	end                         
+
 end
 
 

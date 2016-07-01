@@ -39,15 +39,17 @@
 
 	<div class="form-group">
 		<label>Your name</label>
-		<input type="text" name="order[name]" class="form-control" placeholder="Your name">
+		<input type="text" name="orderr[name]" class="form-control" placeholder="Your name">
 	</div>
 	<div class="form-group">
 		<label>Your phone</label>
-		<input type="text" name="order[phone]" class="form-control" placeholder="Your phone">
+		<input type="text" name="orderr[phone]" class="form-control" placeholder="Your phone">
 	</div>
 	<div class="form-group">
 		<label>Your delivery adress</label>
-		<textarea  name="order[adress]" class="form-control" placeholder="Your delivery adress"></textarea>
+		<textarea  name="orderr[adress]" class="form-control" placeholder="Your delivery adress"></textarea>
 	</div>
 	<button type="submit" class="btn btn-success btn-lg">Place this order</button>
+
+	<button class="btn btn-danger btn-lg" onclick="return cancel_order()">Cancel</button>
 </form>
