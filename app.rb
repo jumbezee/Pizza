@@ -19,6 +19,12 @@ get '/' do
 	erb :index 
 end
 
+
+get '/admin' do
+	@ord = Order.all
+	erb :admin
+end
+
 get '/about' do
 	erb :about
 end
@@ -41,7 +47,7 @@ end
 
 post '/place_order' do
 
-	@o = Order.new params[:orderr]
+	@o = Order.new params[:order]
    	if @o.save
    		erb :place_order
 	else

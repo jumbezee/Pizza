@@ -1,0 +1,20 @@
+
+
+<div class="row">
+<% @ord.each do |o|%>
+	<div class="col-md-4">
+		<div>
+			<%=o.orders_input%>
+		</div>
+		<div>
+			<%= o.name%>
+		</div>
+		<div>
+			<%= o.phone%>
+		</div>
+		<div>
+			<%= o.adress%> 
+		</div>	
+	</div>
+<% end %>
+</div>

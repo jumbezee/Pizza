@@ -14,6 +14,7 @@
 ActiveRecord::Schema.define(version: 20160701000047) do
 
   create_table "orders", force: :cascade do |t|
+    t.text     "orders_input"
     t.text     "name"
     t.text     "phone"
     t.text     "adress"
